@@ -1,2 +1,1 @@
-# A_fumigatus_popgen
-Population genetics for A.fumigatus
+Previously published whole genome sequencing projects for test driving SNP/indel calling

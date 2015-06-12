@@ -1,9 +1,9 @@
-#PBS -j oe -N sickle -l walltime=1:00:00
+#PBS -j oe -N sickle -l walltime=8:00:00
 module load sickle
 
 INPUT=fastq
 OUTPUT=trim
-LEN=50
+LEN=30
 QUAL=20
 N=$PBS_ARRAYID
 if [ ! $N ]; then
@@ -30,7 +30,7 @@ if [ ! -f $OUTFILE1 ]; then
   sickle pe -f $FILE1 -r $FILE2 -t sanger -l $LEN -q $QUAL \
   -o $OUTFILE1 -p $OUTFILE2 -s $OUTFILES
  else
-  sickle se -f $FILE1 -t sanger -l $LEN -q $QUAL -o $OUTFILE1
+  sickle se -f $FILE1 -t sanger -l $LEN -q $QUAL -o $OUTFILES
  fi
 
 fi
